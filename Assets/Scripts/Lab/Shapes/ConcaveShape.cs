@@ -19,7 +19,7 @@ public class ConcaveShape : Lense
         set
         {
             squareX = Mathf.Max(value, 2);
-            square.transform.localScale = new Vector2(squareX, squareY);
+            square.transform.localScale = new Vector3(squareX, squareY, 1);
 
             leftSide.transform.localPosition = new Vector2(-square.transform.localScale.x / 2, leftSide.transform.localPosition.y);
             rightSide.transform.localPosition = new Vector2(square.transform.localScale.x / 2, rightSide.transform.localPosition.y);
@@ -32,7 +32,7 @@ public class ConcaveShape : Lense
         set
         {
             squareY = Mathf.Max(value, 1);
-            square.transform.localScale = new Vector2(squareX, squareY);
+            square.transform.localScale = new Vector3(squareX, squareY, 1);
 
             leftSide.transform.localPosition = new Vector3(-square.transform.localScale.x / 2, leftSide.transform.localPosition.y, 0);
             leftSide.transform.localScale = new Vector3(leftRadius * -2, squareY, 1);

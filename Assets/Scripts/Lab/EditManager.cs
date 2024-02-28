@@ -347,7 +347,7 @@ public class EditManager : MonoBehaviourPunCallbacks
 
             foreach (LenseData lenseData in saveData.lenses)
             {
-                GameObject spawnedLense = lenseData.type == "ConcaveLense" ? Instantiate(concaveLensPrefab) : Instantiate(convexLensePrefab);
+                GameObject spawnedLense = lenseData.type == "ConcaveShape" ? Instantiate(concaveLensPrefab) : Instantiate(convexLensePrefab);
                 Lense lense = spawnedLense.GetComponent<Lense>();
                 Glass glass = spawnedLense.GetComponent<Glass>();
 

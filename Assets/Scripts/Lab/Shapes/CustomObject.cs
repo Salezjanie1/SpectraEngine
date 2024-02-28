@@ -27,7 +27,7 @@ public class CustomObject : MonoBehaviour
         {
             // Pobierz ścieżkę do wybranego pliku
             //string filePath = paths.FileName;
-
+            bool is3d = FindObjectOfType<EditManager>().is3d;
             // Wczytaj obiekt .obj z wybranej ścieżki
             GameObject loadedObject = new OBJLoader().Load(paths[0]);
             loadedObject.name = "CO";
@@ -37,7 +37,12 @@ public class CustomObject : MonoBehaviour
             loadedObject.tag = "reflect";
 
             // Zmień materiał obiektu na nowy materiał
-            Material newMat = Resources.Load("glass", typeof(Material)) as Material;
+            Material newMat;
+            if(is3d)
+                newMat = Resources.Load("glass3d", typeof(Material)) as Material;
+            else
+                newMat = Resources.Load("glass", typeof(Material)) as Material;
+
             loadedObject.GetComponent<Renderer>().material = newMat;
 
             foreach (Transform child in loadedObject.transform)
@@ -47,12 +52,13 @@ public class CustomObject : MonoBehaviour
                 if (child.GetComponent<Renderer>())
                 {
                     // Zmień materiał podobiektu 
+                    
                     child.GetComponent<Renderer>().material = newMat;
 
                 }
             }
             Vector3 screenCenter;
-            if(FindObjectOfType<EditManager>().is3d){
+            if(is3d){
                 Vector3 cameraPosition = Camera.main.transform.position;
 
                 // Pobierz kierunek, w którym kamera jest skierowana

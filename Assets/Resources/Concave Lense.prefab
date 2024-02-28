@@ -56,6 +56,8 @@ MonoBehaviour:
   refractiveIndex: 1.5
   transmission: 100
   isCustom: 0
+  isLense3D: 0
+  typeOfLense3D: 
 --- !u!114 &4391123394749943348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +222,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0314243, y: 1.0171446, z: 0.2784678}
-  m_Center: {x: -0.011207819, y: -0.0071401596, z: 0.36076608}
+  m_Size: {x: 1.0314243, y: 1.0171446, z: 0.09267215}
+  m_Center: {x: -0.011207819, y: -0.0071401596, z: -0.5871015}
 --- !u!1 &5783828741996620898
 GameObject:
   m_ObjectHideFlags: 0

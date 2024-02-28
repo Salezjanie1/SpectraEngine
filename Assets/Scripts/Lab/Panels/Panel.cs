@@ -120,10 +120,11 @@ public class Panel : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Delete) && FindFirstObjectByType<EditManagerOnline>() == null)
-            Delete();
-        else if (Input.GetKeyDown(KeyCode.Delete) && FindFirstObjectByType<EditManagerOnline>() != null)
-            DeleteOnline();
+        if (Input.GetKeyDown(KeyCode.Delete))
+            if (FindFirstObjectByType<EditManagerOnline>() == null)
+                Delete();
+            else
+                DeleteOnline();
 
         if (posX.isFocused || posY.isFocused || posZ.isFocused) return;
 
@@ -142,6 +143,7 @@ public class Panel : MonoBehaviourPunCallbacks
 
     private void DeleteOnline()
     {
+        Debug.Log("t");
         FindFirstObjectByType<EditManagerOnline>().GetComponent<PhotonView>().RPC("CloseAll", RpcTarget.All);
         PhotonNetwork.Destroy(dataSource.gameObject);
         Resources.UnloadUnusedAssets();
