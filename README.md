@@ -6,7 +6,7 @@ Projekt powstał w ramach przygotowań do konkursu Motorola Cup 2023, stanowiąc
 
 Dokumentacja użytkowania aplikacji znajduję się w pliku [Dokumentacja.pdf](https://github.com/WicherK/Spectra-Engine/blob/main/Dokumentacja.pdf)
 
-### Wersja przeglądarkowa
+## Wersja przeglądarkowa
 
 Aplikacja jest również dostępna w wersju web pod adresem: [Aplikacja webowa](https://wicherk.github.io/)
 
